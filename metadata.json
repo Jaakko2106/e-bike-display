@@ -1,0 +1,5 @@
+{
+  "name": "E-Bike Dashboard",
+  "description": "A futuristic and high-contrast e-bike dashboard interface that displays real-time metrics like speed, battery level, trip information, and assist modes. It also includes simulated navigation, music controls, and a reverse camera view.",
+  "requestFramePermissions": []
+}
