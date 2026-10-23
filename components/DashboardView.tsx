@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SPEED_UNIT } from '../constants';
 import { BatteryIndicator } from './BatteryIndicator';
@@ -10,18 +9,26 @@ interface DashboardViewProps {
   gear: string;
   batteryPercent: number;
   batteryVoltage: number;
+  isCharging?: boolean;
 }
 
-export const DashboardView: React.FC<DashboardViewProps> = ({ speed, gear, batteryPercent, batteryVoltage }) => (
-  <div className="grid grid-cols-2 gap-4 h-full p-4">
-    <div className="col-span-2 flex flex-col items-center justify-center bg-gray-900 rounded-2xl shadow-2xl border-2 border-indigo-600">
-      <div className="text-7xl sm:text-8xl lg:text-9xl font-black text-white font-mono leading-none">
-        {speed.toFixed(1)}
+export const DashboardView: React.FC<DashboardViewProps> = ({ speed, gear, batteryPercent, batteryVoltage, isCharging = false }) => (
+  <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full p-2 sm:p-4 grid-rows-[1fr_auto]">
+    <div className="col-span-2 flex flex-col items-center justify-center bg-gray-900 rounded-3xl shadow-2xl border-2 sm:border-4 border-indigo-600/50 relative overflow-hidden min-h-0">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-indigo-900/10 blur-3xl rounded-full pointer-events-none"></div>
+      
+      <div className="relative z-10 flex flex-col items-center">
+        <div className="text-[5.5rem] sm:text-[9rem] md:text-[11rem] lg:text-[13rem] font-black text-white font-mono leading-none tracking-tighter drop-shadow-2xl">
+          {speed.toFixed(1)}
+        </div>
+        <div className="text-xl sm:text-3xl md:text-4xl font-bold text-indigo-400 mt-2 tracking-[0.2em] uppercase opacity-90">
+            {SPEED_UNIT}
+        </div>
       </div>
-      <div className="text-3xl sm:text-4xl font-medium text-indigo-400 mt-1">{SPEED_UNIT}</div>
     </div>
 
-    <BatteryIndicator percent={batteryPercent} voltage={batteryVoltage} />
+    <BatteryIndicator percent={batteryPercent} voltage={batteryVoltage} isCharging={isCharging} />
     <DisplayMetric icon={Zap} label="Assist Level" value={gear} unit="" />
   </div>
 );

@@ -1,13 +1,11 @@
+import { DEFAULT_ROUTE_STEPS } from './types/navigation';
 
 export const SPEED_UNIT = 'km/h';
 export const MAX_BATTERY = 100;
 
-export const ROUTE_DIRECTIONS: string[] = [
-  "Continue straight for 2.5 km.",
-  "Turn left onto Elm Street.",
-  "Merge onto Highway 101.",
-  "You have arrived at your destination.",
-];
+export const ROUTE_DIRECTIONS: string[] = DEFAULT_ROUTE_STEPS.map((s) => s.instruction);
+
+export { DEFAULT_ROUTE_STEPS };
 
 export const MUSIC_TRACKS: string[] = ["Riding Rhythms", "Motor Melodies", "Trail Tunes", "E-Boost Bass"];
 
