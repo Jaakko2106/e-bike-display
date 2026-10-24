@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">E-Bike Dashboard</string>
+    <string name="dashboard_title">E-Bike OS v1.2</string>
+    <string name="speed_unit">KM/H</string>
+    <string name="assist_level">ASSIST LEVEL</string>
+    <string name="battery_health">Battery Health</string>
+    <string name="gps_signal">GPS Signal</string>
+    <string name="trip_distance">Trip Distance</string>
+    <string name="odometer">Odometer</string>
+    <string name="trip_duration">Trip Duration</string>
+    <string name="avg_speed">Average Speed</string>
+    <string name="reverse_camera">REVERSE CAMERA</string>
+    <string name="close">CLOSE</string>
+    <string name="start_route">Start Route</string>
+    <string name="end_route">End</string>
+</resources>
